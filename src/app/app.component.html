@@ -1,13 +1,13 @@
-<div class="container">
-  <h1 class="mt-3">Shared Service</h1>
-  <div class="container-fluid mt-4">
-    <div class="row">
-      <div class="col-sm-12 border border-primary">
-        <app-parent1></app-parent1>
-      </div>
-      <div class="col-sm-12 border border-primary mt-3">
-        <app-parent2></app-parent2>
-      </div>
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Shared service</h1>
+      <p>
+        <a href="parent1" class="btn btn-primary my-2">Parent 1</a>
+        <a href="parent2" class="btn btn-primary my-2">Parent 2</a>
+      </p>
+      <hr>
+      <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+</section>

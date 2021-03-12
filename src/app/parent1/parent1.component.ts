@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService, User } from '../services/shared.service';
 
 @Component({
   selector: 'app-parent1',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Parent1Component implements OnInit {
 
-  constructor() { }
+  userService: SharedService;
+  userList: User[] = [];
 
-  ngOnInit(): void {
+  constructor() {
+    this.userService = new SharedService();
+  }
+
+  ngOnInit(): void{
+  }
+
+  getUsers(): void {
+    this.userList = this.userService.getUsers();
   }
 
 }

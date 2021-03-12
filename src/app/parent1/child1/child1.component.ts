@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SharedService, User} from '../../services/shared.service';
 
 @Component({
   selector: 'app-child1',
   templateUrl: './child1.component.html',
-  styleUrls: ['./child1.component.scss']
+  styleUrls: ['./child1.component.scss'],
+  providers: [SharedService]
 })
 export class Child1Component implements OnInit {
 
-  constructor() { }
+  userService: SharedService;
+  userList: User[] = [];
+
+  constructor() {
+    this.userService = new SharedService();
+  }
 
   ngOnInit(): void {
+  }
+
+  getUsers(): void {
+    this.userList = this.userService.getUsers();
   }
 
 }
